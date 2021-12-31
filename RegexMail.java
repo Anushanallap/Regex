@@ -119,6 +119,21 @@ public class RegexMail {
 
 					return m.matches();
 				}
+				//uc8
+				public static boolean Rule4(String password)
+				{
+					String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-+(){}_!@#$%^&*., ?]){8,}.*$";
+					Pattern p = Pattern.compile(regex);
+
+					if (password == null) {
+						return false;
+					}
+
+					Matcher m = p.matcher(password);
+
+					return m.matches();
+				}
+
 
 				public static void main(String args[]) {
 
