@@ -1,6 +1,7 @@
 package com.company.Regex;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,7 +24,7 @@ public class RegexMail {
 					}
 					}
 
-				
+				//UC2
 				public void Lastname() {
 
 					List.add("jhon");
@@ -40,11 +41,21 @@ public class RegexMail {
 						System.out.println(List.get(i) + "-" + matches.matches());
 					}
 				}
-					public static void main(String args[]) {
+				public static void main(String[] args) {
+				      Scanner sc = new Scanner(System.in);
+				      
+				      System.out.println("Enter your Email: ");
+				      
+				      String mailid = sc.next();
+				      String regex = "^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$";
 
-						RegexMail obj = new RegexMail();
-						obj.Lastname();
+				      boolean result = mailid.matches(regex);
+				      
+				      if(result) {
+				         System.out.println("Given email-id is valid");
+				      } else {
+				         System.out.println("Given email-id is not valid");
+				      }
+				   }
+
 }
-	}
-
-
