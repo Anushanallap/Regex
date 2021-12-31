@@ -133,6 +133,40 @@ public class RegexMail {
 
 					return m.matches();
 				}
+				//uc9
+				private void Email() {
+
+					emailtest.add("abc@yahoo.com");
+					emailtest.add("abc-100@yahoo.com");
+					emailtest.add("abc.100@yahoo.com");
+					emailtest.add("abc111@abc.com");
+					emailtest.add("abc-100@abc.com");
+					emailtest.add("abc.100@abc.com.au");
+					emailtest.add("abc@1com");
+					emailtest.add("abc@gmail.com.com");
+					emailtest.add("abc+100@gmail.com");
+
+					// Invalid emails
+					emailtest.add("@yahoo.com");
+					emailtest.add(".yahoo.com");
+					emailtest.add("..yahoo.com");
+					emailtest.add("abc@abc@gmail.com");
+					emailtest.add("abc@%*.com");
+					
+
+					String regex = "^(.+)@(.+)$";
+
+					Pattern pattern = Pattern.compile(regex);
+							{
+//					String[] Validemails;
+								
+					for (String add : emailtest) {
+						Matcher matcher = pattern.matcher(add);
+						System.out.println("The valid and invalid emails are :");
+						System.out.println(add + " : " + matcher.matches());
+					}
+							}
+				}
 
 
 				public static void main(String args[]) {
