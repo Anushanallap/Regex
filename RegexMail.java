@@ -22,9 +22,29 @@ public class RegexMail {
 						System.out.println(List.get(i) + "-" + m.matches());
 					}
 					}
+
+				
+				public void Lastname() {
+
+					List.add("jhon");
+					List.add("Wick");
+					
+					String regex = "[A-Z]{1}[a-z]{3}";
+					
+					Pattern p = Pattern.compile(regex);
+
+					for (int i = 0; i < List.size(); i++) {
+						Matcher matches = p.matcher(List.get(i));
+						System.out.println("The Last name is :");
+						
+						System.out.println(List.get(i) + "-" + matches.matches());
+					}
+				}
 					public static void main(String args[]) {
 
 						RegexMail obj = new RegexMail();
-						obj.Firstname();
+						obj.Lastname();
 }
 	}
+
+
