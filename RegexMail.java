@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class RegexMail {
 		
 		static ArrayList<String> List = new ArrayList<String>();
-
+		//uc1
 				public void Firstname() {
 					
 					List.add("Jhon");
@@ -41,7 +41,8 @@ public class RegexMail {
 						System.out.println(List.get(i) + "-" + matches.matches());
 					}
 				}
-				public static void main(String[] args) {
+				//UC3
+				public static void main1(String[] args) {
 				      Scanner sc = new Scanner(System.in);
 				      
 				      System.out.println("Enter your Email: ");
@@ -57,5 +58,29 @@ public class RegexMail {
 				         System.out.println("Given email-id is not valid");
 				      }
 				   }
+				public void mobilenum() {
+					
+					
+					ArrayList<String> numbers = new ArrayList<String>();
+
+				
+				numbers.add("91 9652814314");
+				numbers.add("14 8790275009");
+
+				String regex = "(0|91 )[9][0-9]{9}";
+
+				Pattern pattern = Pattern.compile(regex);
+
+				for (String number : numbers) {
+					Matcher matcher = pattern.matcher(number);
+					System.out.println(number + " : " + matcher.matches());
+				}
+				}
+				public static void main(String args[]) {
+
+					UC1 obj = new UC1();
+					obj.Firstname();
+
+				}
 
 }
