@@ -58,6 +58,7 @@ public class RegexMail {
 				         System.out.println("Given email-id is not valid");
 				      }
 				   }
+				//uc4
 				public void mobilenum() {
 					
 					
@@ -76,6 +77,21 @@ public class RegexMail {
 					System.out.println(number + " : " + matcher.matches());
 				}
 				}
+				//uc5
+				public static boolean Password(String password)
+				{
+					String regex = "[A-Za-z]{8,}";
+					Pattern p = Pattern.compile(regex);
+
+					if (password == null) {
+						return false;
+					}
+
+					Matcher m = p.matcher(password);
+
+					return m.matches();
+				}
+
 				public static void main(String args[]) {
 
 					UC1 obj = new UC1();
